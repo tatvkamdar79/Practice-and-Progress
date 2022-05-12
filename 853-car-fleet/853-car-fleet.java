@@ -1,17 +1,21 @@
 class Solution {
-    public int carFleet(int target, int[] pos, int[] speed) {
-        Map<Integer, Double> m = new TreeMap<>(Collections.reverseOrder());
-        
-        for(int i = 0; i < pos.length; ++i)     m.put(pos[i], (double)(target - pos[i]) / speed[i]);
-        
-        int res = 0; double cur = 0;
-        
-        for (double time : m.values()){
-            if (time > cur){
-                cur = time;
-                res++;
+    public int carFleet(int target, int[] position, int[] speed) {
+           int res = 0;
+           double[] timeArr = new double[target];
+           for (int i = 0; i < position.length; i++)
+            {
+                timeArr[position[i]]= (double)(target - position[i]) / speed[i];
             }
-        }
-        return res;
+            double prev = 0.0;
+            for (int i = target-1; i >=0 ; i--)
+            {
+                double cur = timeArr[i];
+                if (cur > prev)
+                {
+                    prev = cur;
+                    res++;
+                }
+            }
+            return res;
     }
 }
