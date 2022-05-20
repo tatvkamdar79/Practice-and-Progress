@@ -1,12 +1,17 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        d = {}
+        from collections import defaultdict
+        d = defaultdict(int)
         d[0] = 1
-        s = 0
-        c = 0
-        for i in range(len(nums)):
-            s += nums[i]
-            if s - k in d:
-                c += d[s-k]
-            d[s] = 1 if s not in d else d[s] + 1
-        return c
+        ans = 0
+        rs = 0
+        for i in nums:
+            rs += i
+            val = rs - k
+            if val in d:
+                ans += d[val]
+            if rs in d:
+                d[rs] += 1
+            else:
+                d[rs] = 1
+        return ans
