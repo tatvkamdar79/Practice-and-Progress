@@ -1,10 +1,10 @@
 class Solution {
     public List<Integer> numOfBurgers(int tomatoSlices, int cheeseSlices) {
-        if((tomatoSlices&1) == 1)  return Collections.emptyList();
+        if(tomatoSlices % 2 == 1) return new ArrayList<Integer>();
+        int s = -tomatoSlices/2 + 2*cheeseSlices;
+        int j =  tomatoSlices/2 -   cheeseSlices;
         
-        int jumbo = ( tomatoSlices - 2 * (cheeseSlices) ) / 2;
-        int small = cheeseSlices - jumbo;
-        
-        return (jumbo >= 0 && small >= 0) ? Arrays.asList(jumbo, small) : Collections.emptyList();
+        if(j < 0 || s < 0) return new ArrayList<Integer>();
+        return Arrays.asList(j, s);
     }
 }
