@@ -1,29 +1,14 @@
 class Solution {
-    public int dayOfYear(String S) {
-        String[] s = S.split("-");
-        int year = Integer.parseInt(s[0]);
-        int month = Integer.parseInt(s[1]);
-        int date = Integer.parseInt(s[2]);
-        boolean isLeap = checkYear(year);
-        int noOfDays = 0;
-        int[] days = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        for (int i = 0; i < month - 1; i++) {
-            if (isLeap && i == 1) {
-                noOfDays += days[i] + 1;
-                continue;
-            }
-            noOfDays += days[i];
+    public int dayOfYear(String date) {
+        int[] monthsum = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
+        int ans = 0;
+        int year = 1000*((int)date.charAt(0)-'0')+100*((int)date.charAt(1)-'0')+10*((int)date.charAt(2)-'0')+((int)date.charAt(3)-'0');
+        int month = 10*((int)date.charAt(5)-'0')+((int)date.charAt(6)-'0');
+        int day = 10*((int)date.charAt(8)-'0')+((int)date.charAt(9)-'0');
+        if(year%4==0 && year != 1900 && month>2){
+            monthsum[month-1]++;
         }
-        return noOfDays + date;
-    }
-    
-    public boolean checkYear(int year) {
-        if (year % 400 == 0)
-            return true;
-        if (year % 100 == 0)
-            return false;
-        if (year % 4 == 0)
-            return true;
-        return false;
+        ans=day+monthsum[month-1];
+        return ans;
     }
 }
