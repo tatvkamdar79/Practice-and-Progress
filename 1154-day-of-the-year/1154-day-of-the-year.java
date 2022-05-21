@@ -1,12 +1,29 @@
-class Solution:
-    def dayOfYear(self, date: str) -> int:
-        year, month, day = map(int, date.split('-'))
-        days_month_wise = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
-        
-        if year%4 == 0 and year/100 != 19:
-            for i in range(2, len(days_month_wise)):
-                days_month_wise[i] += 1
-        
-        ans = days_month_wise[month-1] + day
-        
-        return ans
+class Solution {
+    public int dayOfYear(String S) {
+        String[] s = S.split("-");
+        int year = Integer.parseInt(s[0]);
+        int month = Integer.parseInt(s[1]);
+        int date = Integer.parseInt(s[2]);
+        boolean isLeap = checkYear(year);
+        int noOfDays = 0;
+        int[] days = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        for (int i = 0; i < month - 1; i++) {
+            if (isLeap && i == 1) {
+                noOfDays += days[i] + 1;
+                continue;
+            }
+            noOfDays += days[i];
+        }
+        return noOfDays + date;
+    }
+    
+    public boolean checkYear(int year) {
+        if (year % 400 == 0)
+            return true;
+        if (year % 100 == 0)
+            return false;
+        if (year % 4 == 0)
+            return true;
+        return false;
+    }
+}
