@@ -6,10 +6,9 @@ class Solution {
         Arrays.fill(rank, 1);
         Arrays.setAll(parent, i -> i);
 
-        for(int i = 0; i < edges.length; i++){
-            int n1 = edges[i][0], n2 = edges[i][1];
-            if(union(n1, n2))   continue;
-            else    return edges[i];
+        for(int[] a : edges){
+            if(union(a[0], a[1]))   continue;
+            else    return a;
         }
         return new int[2];
     }
