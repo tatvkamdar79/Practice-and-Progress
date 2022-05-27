@@ -1,9 +1,11 @@
-class Solution:
-    def getMaximumConsecutive(self, coins: List[int]) -> int:
-        res = 1
-        coins.sort()
-        for c in coins:
-            if c > res:
-                return res
-            res += c
-        return res
+class Solution {
+    public int getMaximumConsecutive(int[] coins) {
+        Arrays.sort(coins);
+        int count = 1;
+        for(int i : coins){
+            if(i > count)   return count;
+            count += i;
+        }
+        return count;
+    }
+}
