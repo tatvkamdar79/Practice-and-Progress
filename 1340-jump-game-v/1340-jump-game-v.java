@@ -1,7 +1,9 @@
 class Solution {
-    Map<Integer, Integer> mp = new HashMap<>();
+    // Map<Integer, Integer> mp = new HashMap<>();
+    int[] mp;
     public int maxJumps(int[] arr, int d) {
         int ans = 0;
+        mp = new int[arr.length];
         for(int i = 0; i < arr.length; i++){
             ans = Math.max(ans, rec(arr, d, i));
         }
@@ -11,8 +13,10 @@ class Solution {
         if(curr > arr.length - 1 || curr < 0)
             return 0;
         
-        if(mp.containsKey(curr))
-            return mp.get(curr);
+        if(mp[curr] != 0)
+            return mp[curr];
+        // if(mp.containsKey(curr))
+        //     return mp.get(curr);
         
         int ans = 0;
         
@@ -28,7 +32,8 @@ class Solution {
             else
                 break;
         }
-        mp.put(curr, 1 + ans);
+        // mp.put(curr, 1 + ans);
+        mp[curr] = 1 + ans;
         return ans + 1;
     }
 }
