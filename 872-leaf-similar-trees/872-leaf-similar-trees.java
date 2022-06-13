@@ -19,14 +19,7 @@ class Solution {
     public boolean leafSimilar(TreeNode root1, TreeNode root2) {
         rec(root1, t1);
         rec(root2, t2);
-        if(t1.size() != t2.size())
-            return false;
-        for(int i = 0; i < t1.size(); i++){
-            if(t1.get(i) != t2.get(i)){
-                return false;
-            }
-        }
-        return true;
+        return t1.equals(t2);
     }
     public void rec(TreeNode root, List<Integer> t){
         if(root == null)
