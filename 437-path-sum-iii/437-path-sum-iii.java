@@ -21,6 +21,9 @@ public class Solution {
     
     public int pathSumFrom(TreeNode node, int sum) {
         if (node == null) return 0;
-        return (node.val == sum ? 1 : 0) + pathSumFrom(node.left, sum - node.val) + pathSumFrom(node.right, sum - node.val);
+        if(node.val == sum){
+            return 1 + pathSumFrom(node.left, sum - node.val) + pathSumFrom(node.right, sum - node.val);
+        }
+        return pathSumFrom(node.left, sum - node.val) + pathSumFrom(node.right, sum - node.val);
     }
 }
