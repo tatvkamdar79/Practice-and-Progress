@@ -1,8 +1,8 @@
 class Solution {
-    public Set<List<Integer>> ans = new HashSet<>();
+    public List<List<Integer>> ans = new ArrayList<>();
     public List<List<Integer>> combinationSum3(int k, int n) {
         rec(k, n, 0, new boolean[10], new ArrayList<Integer>(), 1);
-        return new ArrayList<>(ans);
+        return ans;
     }
     public void rec(int k, int target, int sum, boolean[] check, List<Integer> temp, int start){
         if(k < 0)
