@@ -14,21 +14,18 @@
  * }
  */
 class Solution {
-    public boolean isSubtree(TreeNode root, TreeNode subRoot) {
-        if(root == null)
-            return false;
-        if(isSame(root, subRoot))
-            return true;
-        return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
-        
+    public boolean isSubtree(TreeNode s, TreeNode t) { // takes O(m x n)
+      if (s == null) {
+        return t == null;
+      }
+      return isSame(s, t) || isSubtree(s.left, t) || isSubtree(s.right, t);
     }
-    public boolean isSame(TreeNode root, TreeNode subRoot){
-        if(root == null && subRoot == null)
-            return true;
-        if(root == null || subRoot == null)
-            return false;
-        if(root.val != subRoot.val)
-            return false;
-        return isSame(root.left, subRoot.left) && isSame(root.right, subRoot.right);
+
+    private boolean isSame(TreeNode t1, TreeNode t2) { // takes O(n)
+      if (t1 == null && t2 == null) return true;
+      if (t1 == null || t2 == null) return false;
+
+      if (t1.val != t2.val) return false;
+      return isSame(t1.left, t2.left) && isSame(t1.right, t2.right);
     }
 }
