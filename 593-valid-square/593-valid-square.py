@@ -1,11 +1,15 @@
 class Solution:
     def validSquare(self, p1: List[int], p2: List[int], p3: List[int], p4: List[int]) -> bool:
-        if p1==p2==p3==p4:return False
-        def dist(x,y):
-            return (x[0]-y[0])**2+(x[1]-y[1])**2
-        ls=[dist(p1,p2),dist(p1,p3),dist(p1,p4),dist(p2,p3),dist(p2,p4),dist(p3,p4)]
-        ls.sort()
-        if ls[0]==ls[1]==ls[2]==ls[3]:
-            if ls[4]==ls[5]:
-                return True
-        return False
+        def dist(point1,point2):
+            return (point1[0]-point2[0])**2+(point1[1]-point2[1])**2
+            
+        D=[
+        dist(p1,p2),
+        dist(p1,p3),
+        dist(p1,p4),
+        dist(p2,p3),
+        dist(p2,p4),
+        dist(p3,p4)
+        ]
+        D.sort()
+        return 0<D[0]==D[1]==D[2]==D[3] and D[4]==D[5]
