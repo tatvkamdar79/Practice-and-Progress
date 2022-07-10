@@ -12,8 +12,9 @@ class Solution {
         }
         // System.out.println(Arrays.toString(left));
         // System.out.println(Arrays.toString(right));
-        for(int i=1;i<n;i++){
-            if(left[i-1]<=right[i]) return i;
+        for(int i = 1; i < n; i++){
+            if(left[i-1] <= right[i])
+                return i;
         }
         return n-1;
     }
