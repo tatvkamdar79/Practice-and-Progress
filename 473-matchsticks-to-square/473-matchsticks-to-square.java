@@ -1,41 +1,34 @@
 class Solution {
+    boolean[] st;
     public boolean makesquare(int[] nums) {
-    	if (nums == null || nums.length < 4) return false;
         int sum = 0;
-        for (int num : nums) sum += num;
-        if (sum % 4 != 0) return false;
-        
+        for(int x:nums) sum += x;
+        if(sum == 0 || sum % 4 != 0) return false;
         Arrays.sort(nums);
-        reverse(nums);
-        
-    	return dfs(nums, new int[4], 0, sum / 4);
-    }
-    
-    private boolean dfs(int[] nums, int[] sums, int index, int target) {
-    	if (index == nums.length) {
-    	    if (sums[0] == target && sums[1] == target && sums[2] == target) {
-    		return true;
-    	    }
-    	    return false;
-    	}
-    	
-    	for (int i = 0; i < 4; i++) {
-    	    if (sums[i] + nums[index] > target) continue;
-    	    sums[i] += nums[index];
-            if (dfs(nums, sums, index + 1, target)) return true;
-    	    sums[i] -= nums[index];
-    	}
-    	
-    	return false;
-    }
-    
-    private void reverse(int[] nums) {
-        int i = 0, j = nums.length - 1;
-        while (i < j) {
-            int temp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = temp;
-            i++; j--;
+        int[] arr = new int[nums.length];
+        for(int i = 0;i < nums.length;i++) {
+            arr[i] = nums[nums.length -1 -i];
         }
+        st = new boolean[nums.length];
+        return dfs(nums,0,0,0,sum/4);
+    }
+    
+    boolean dfs(int[] nums,int u,int cur,int start,int length) {
+        if(u == 4) return true;
+        if(cur == length) return dfs(nums,u+1,0,0,length);
+        
+        for(int i =start;i < nums.length;i++) {
+            if(!st[i] && cur + nums[i] <= length) {
+                st[i] = true;
+                if(dfs(nums,u,cur + nums[i],i+1,length)) return true;
+                st[i] =false;
+                
+                
+                if(cur == 0) return false;
+                if(cur + nums[i] == length) return false;
+                while(i + 1 < nums.length && nums[i+1] == nums[i]) i++;
+            }
+        }
+        return false;
     }
 }
