@@ -7,14 +7,8 @@ class Solution {
         for(int i = 0; i < s.length(); i++){
             // System.out.print(sum + " -> ");
             char c = s.charAt(i);
-            if(i == 0){
-                c = (char)(97 + ((c - 'a' + (sum))%26));
-                sum -= shifts[0];
-            }
-            else{
-                c = (char)(97 + ((c - 'a' + (sum))%26));
-                sum -= shifts[i];
-            }
+            c = (char)(97 + ((c - 'a' + (sum))%26));
+            sum -= shifts[i];
             sb.append(c);
             // System.out.println(sum);
         }
