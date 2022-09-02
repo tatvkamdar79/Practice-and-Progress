@@ -37,7 +37,7 @@ class Solution {
         int res = 0;
         while(!q.isEmpty()){
             int size = q.size();
-            for(int i=0;i<size;i++){
+            while(size-- > 0){
                 int cur = q.poll();
                 cnt--;
                 if(cnt == 0)
