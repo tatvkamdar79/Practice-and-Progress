@@ -19,16 +19,16 @@ class Solution {
         return root;
     }
 
-    public void rec(TreeNode node1, TreeNode node2, int lvl) {
-        if (node1 == null || node2 == null) return;
+    public void rec(TreeNode l, TreeNode r, int lvl) {
+        if (l == null || r == null) return;
         
         if (lvl % 2 == 1){
-            int temp = node1.val;
-            node1.val = node2.val;
-            node2.val = temp;
+            int temp = l.val;
+            l.val = r.val;
+            r.val = temp;
         }
         
-        rec(node1.left, node2.right, lvl + 1);
-        rec(node1.right, node2.left, lvl + 1);
+        rec(l.left, r.right, lvl + 1);
+        rec(l.right, r.left, lvl + 1);
     }
 }
