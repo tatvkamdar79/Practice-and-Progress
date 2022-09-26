@@ -17,8 +17,8 @@ class Solution {
                 right[i] = right[i+1]+1;
             
         }
-        System.out.println(Arrays.toString(left));
-        System.out.println(Arrays.toString(right));
+        // System.out.println(Arrays.toString(left));
+        // System.out.println(Arrays.toString(right));
         for(int i = 1; i < nums.length - 1; i++){
             if(left[i-1] >= k && right[i+1] >= k)
                 l.add(i);
