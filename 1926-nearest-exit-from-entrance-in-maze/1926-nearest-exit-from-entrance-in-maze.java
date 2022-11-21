@@ -1,38 +1,27 @@
 class Solution {
-    public int nearestExit(char[][] maze, int[] entrance) {
-        int rows = maze.length, cols = maze[0].length, queueSize;
-        Queue<int[]> queue = new LinkedList<>();
-        boolean[][] visited = new boolean[rows][cols];
-        int[] curr;
-        int[][] dirs = {{0,1},{0,-1},{1,0},{-1,0}};
-        int x, y, steps = 0;
-        
-        queue.offer(entrance);
-        visited[entrance[0]][entrance[1]] = true;
-        
-        while (!queue.isEmpty()) {
-            queueSize = queue.size();
-            steps++;
+    public int nearestExit(char[][] maze, int[] ent) {
+        Queue<int[]> q = new LinkedList<>();
+        q.add(new int[]{ent[0], ent[1], 0});
+        int m = maze.length, n = maze[0].length;
+        int steps = 0;
+        int[][]dir = new int[][]{{1,0},{0, 1}, {-1, 0}, {0, -1}};
+        while(!q.isEmpty()){
+            int[] ar = q.poll();
             
-            for (int i=0;i<queueSize;i++) {
-                curr = queue.poll();
-                
-                for (int[] dir: dirs) {
-                    x = dir[0]+curr[0];                    
-                    y = dir[1]+curr[1];
-                    
-                    if (x<0||x>=rows||y<0||y>=cols) continue;
-                    if (visited[x][y] || maze[x][y] == '+') continue;
-                    
-					// check if we have reached boundary
-                    if (x==0||x==rows-1||y==0||y==cols-1) return steps;
-                    
-                    queue.offer(new int[]{x, y});
-                    visited[x][y] = true;
+            if(ar[0] != ent[0] || ar[1] != ent[1]){
+                if(ar[0] == 0 || ar[0] == m - 1 || ar[1] == 0 || ar[1] == n - 1)
+                    return ar[2];                
+            }
+            //add neighbours to queue
+            for(int[] d: dir){
+                int i = d[0] + ar[0], j = d[1] + ar[1];
+                if(i >= 0 && j >=0 && i < m && j < n && maze[i][j] == '.'){
+                    q.add(new int[]{i, j, ar[2] + 1});
+                    maze[i][j] = '+';
                 }
             }
+            
         }
-        
         return -1;
     }
 }
