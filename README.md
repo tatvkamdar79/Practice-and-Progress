@@ -6,6 +6,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Array
 |  |
 | ------- |
+| [0015-3sum](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0015-3sum) |
 | [0073-set-matrix-zeroes](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0073-set-matrix-zeroes) |
 ## Hash Table
 |  |
@@ -25,5 +26,10 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Two Pointers
 |  |
 | ------- |
+| [0015-3sum](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0015-3sum) |
 | [0142-linked-list-cycle-ii](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0142-linked-list-cycle-ii) |
+## Sorting
+|  |
+| ------- |
+| [0015-3sum](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0015-3sum) |
 <!---LeetCode Topics End-->
