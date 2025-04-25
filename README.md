@@ -9,6 +9,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0015-3sum](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0015-3sum) |
 | [0042-trapping-rain-water](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0042-trapping-rain-water) |
 | [0073-set-matrix-zeroes](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0073-set-matrix-zeroes) |
+| [0122-best-time-to-buy-and-sell-stock-ii](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0122-best-time-to-buy-and-sell-stock-ii) |
 | [1036-rotting-oranges](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/1036-rotting-oranges) |
 ## Hash Table
 |  |
@@ -40,6 +41,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0042-trapping-rain-water) |
+| [0122-best-time-to-buy-and-sell-stock-ii](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0122-best-time-to-buy-and-sell-stock-ii) |
 ## Stack
 |  |
 | ------- |
@@ -52,4 +54,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [1036-rotting-oranges](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/1036-rotting-oranges) |
+## Greedy
+|  |
+| ------- |
+| [0122-best-time-to-buy-and-sell-stock-ii](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0122-best-time-to-buy-and-sell-stock-ii) |
 <!---LeetCode Topics End-->
