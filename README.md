@@ -43,6 +43,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0042-trapping-rain-water](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0042-trapping-rain-water) |
 | [0122-best-time-to-buy-and-sell-stock-ii](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0122-best-time-to-buy-and-sell-stock-ii) |
+| [0968-binary-tree-cameras](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0968-binary-tree-cameras) |
 ## Stack
 |  |
 | ------- |
@@ -63,4 +64,16 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [1335-maximum-candies-allocated-to-k-children](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/1335-maximum-candies-allocated-to-k-children) |
+## Tree
+|  |
+| ------- |
+| [0968-binary-tree-cameras](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0968-binary-tree-cameras) |
+## Depth-First Search
+|  |
+| ------- |
+| [0968-binary-tree-cameras](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0968-binary-tree-cameras) |
+## Binary Tree
+|  |
+| ------- |
+| [0968-binary-tree-cameras](https://github.com/tatvkamdar79/Practice-and-Progress/tree/master/0968-binary-tree-cameras) |
 <!---LeetCode Topics End-->
